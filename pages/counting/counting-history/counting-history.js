@@ -98,14 +98,14 @@ Page({
     }
     Bmob.Object.saveAll(objects).then(function (objects) {
       // 批量更新成功
-      console.log("批量更新成功", objects);
+      //console.log("批量更新成功", objects);
       //插入单据
       Bmob.Object.saveAll(billsObj).then(function (res) {
-        console.log("批量新增单据成功", res);
+        //console.log("批量新增单据成功", res);
         for (var i = 0; i < res.length; i++) {
           operation_ids.push(res[i].id);
           if (i == (res.length - 1)) {
-            console.log("批量新增单据成功", res);
+            //console.log("批量新增单据成功", res);
             
             const relation = Bmob_new.Relation('Bills'); // 需要关联的表
             const relID = relation.add(operation_ids);
@@ -113,6 +113,8 @@ Page({
             const pointer = Bmob_new.Pointer('_User')
             const poiID = pointer.set(userid);
             const masterID = pointer.set(masterid);
+
+            console.log(poiID, masterID)
 
             const query = Bmob_new.Query('order_opreations');
             query.set("relations", relID);

@@ -64,6 +64,9 @@ Page({
         wx.setStorageSync('avatarUrl', res.avatarUrl)
         wx.setStorageSync('openid', res.openid);
         wx.setStorageSync('masterid', res.masterId.objectId);
+        wx.setStorageSync('sex', res.masterId.sex)
+        wx.setStorageSync('country', res.masterId.country)
+        wx.setStorageSync('province', res.masterId.province)
 
         setTimeout(function () { wx.switchTab({ url: '/pages/index/index', }) }, 500)
       }).catch(err => {
