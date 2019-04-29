@@ -22,6 +22,16 @@ Page({
     visible:false,
     qrcode:''
   },
+
+  //退出登录
+  logout:function()
+  {
+    wx.clearStorageSync();
+    wx.redirectTo({
+      url: '/pages/landing/landing',
+    })
+  },
+
   handleQRCode:function(){
     this.setData({
       visible:true
@@ -36,13 +46,12 @@ Page({
       })
     }
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
+  /*** 生命周期函数--监听页面加载*/
   onLoad: function (options) {
     this.setData({
       userInfo:{
-        nickName: wx.getStorageSync("nickName"),
+        username: wx.getStorageSync("username"),
         sex: wx.getStorageSync("sex"),
         avatarUrl: wx.getStorageSync("avatarUrl"),
         address: wx.getStorageSync("country") + wx.getStorageSync("province") + wx.getStorageSync("city")

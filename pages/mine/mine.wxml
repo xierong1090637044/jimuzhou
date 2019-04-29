@@ -11,7 +11,7 @@
 					</view>
 				</view>
 				<view class="content-item-text">
-					<text class='username'>{{userInfo.nickName}}</text>
+					<text class='username'>{{userInfo.username}}</text>
           <text class='margin-l-5 {{userInfo.sex==1?"text-default":"text-warning"}}'>{{userInfo.sex==1?'♂':'♀'}}</text>
 					<view class="address font-size-14">
             <i-icon type="coordinates" i-class='text-danger'/>{{userInfo.address||'暂无地址'}}
@@ -25,6 +25,7 @@
 		</view>
 	</view>
 </view>
+
 <i-cell-group>
   <block wx:for="{{modules}}" wx:key="unique">
     <navigator url="{{item.url}}">
@@ -33,7 +34,14 @@
       </i-cell>
     </navigator>
   </block>
+  <block >
+    <view bindtap='logout'>
+      <i-cell title="退出登录" is-link><i-icon type="undo" size="18" slot="icon"/></i-cell>
+    </view>
+  </block>
 </i-cell-group>
+
+
 <i-modal title="我的二维码" visible="{{visible}}" bind:click="handleClickClose" actions="{{actions}}">
     <view>
       <image src='{{qrcode}}' style='width:85px;height:85px;'></image>
