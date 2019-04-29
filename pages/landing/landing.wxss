@@ -1,0 +1,102 @@
+page{
+  background: #fff;
+  text-align: center;
+}
+
+input:focus
+{
+  border-bottom: 1px solid#426ab3!important;
+}
+
+.header_text
+{
+  color: #4d4d4d;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconImage
+{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.input_view
+{
+  padding: 20px 0 0;
+}
+.input_view_flex
+{
+  padding: 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input_element
+{
+  text-align: left;
+  border-bottom: 1px solid#ddd;
+  padding: 0 5px;
+  height: 40px;
+  line-height: 40px;
+}
+.login_button
+{
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: #f1f1f1 !important;
+  border:unset !important;
+  color: #999;
+  font-weight: bold;
+  margin-top: 15%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .1)
+}
+.confirm_btton
+{
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: #42b35f !important;
+  border:unset !important;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 35%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .1)
+}
+
+.bg_button
+{
+  background: #426ab3 !important;
+  color: #fff !important;
+}
+
+.avatar
+{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border:1px solid#fff;
+}
+
+.display_flex
+{
+  display: flex;
+  align-items: center;
+}
+
+.get_smscode
+{
+  font-size: 12px;
+  border-radius: 20px;
+  color: #999;
+  font-weight: bold;
+  background: #f1f1f1 !important;
+  border:unset !important;
+}

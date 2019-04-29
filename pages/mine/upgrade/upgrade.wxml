@@ -1,0 +1,333 @@
+<!--pages/mine/upgrade/upgrade.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="title-name">积木舟</text>
+        <text class="version-text">{{version}}</text>
+        <text class="version-text">公测版</text>
+      </view>
+      <view>
+        <text class="version-log-link">升级日志</text>
+      </view>
+    </view>
+    <view class="log-list">
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.8 公测版</text>
+        <text class="desc-time">2019.03.03</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text>扫码bug修复</text>
+        <text>增加产品简介选项</text>
+        <text>产品详情新增当日出入库新增详情</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.7 公测版</text>
+        <text class="desc-time">2019.02.15</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">增加输入产品条码以及支持产品自带条形码操作</text>
+        <text class="desc-list-item">营收纪录显示优化</text>
+        <text class="desc-list-item">产品详情显示优化</text>
+        <text class="desc-list-item">扫码操作优化</text>
+        <text class="desc-list-item">支持产品预警发送模板消息</text>
+        <text class="desc-list-item">扫码操作bug修复</text>
+        <text class="desc-list-item">支持预览产品大图</text>
+        <text class="desc-list-item">我的客户显示bug修复</text>
+        <text class="desc-list-item">协同管理增加商品管理</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.6 公测版</text>
+        <text class="desc-time">2019.02.13</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">新增我的设置页面</text>
+        <text class="desc-list-item">支持自定义产品充足和库存不足数量</text>
+        <text class="desc-list-item">增加扫码添加商品选项</text>
+        <text class="desc-list-item">操作记录优化</text>
+        <text class="desc-list-item">扫码操作优化</text>
+        <text class="desc-list-item">协同操作看不到产品图片优化</text>
+        <text class="desc-list-item">协同操作新增查看客户授权功能</text>
+        <text class="desc-list-item">协同操作进货价不对外显示</text>
+        <text class="desc-list-item">协同操作入库操作显示更新以及入库金额bug修复</text>
+        <text class="desc-list-item">协同操作准许授权用户进行添加商品的操作</text>
+        <text class="desc-list-item">用户可以修改自己的登陆密码</text>
+        <text class="desc-list-item">产品编辑bug修复</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.5 公测版</text>
+        <text class="desc-time">2019.01.24</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">操作页面显示优化</text>
+        <text class="desc-list-item">增加产品显示类别</text>
+        <text class="desc-list-item">增加盈收记录页面</text>
+        <text class="desc-list-item">选择产品页面优化（增加类别选择）</text>
+        <text class="desc-list-item">个人中心增加类别操作，个人可以新增类别</text>
+        <text class="desc-list-item">增加欠款记录条目</text>
+        <text class="desc-list-item">增加我的客户可以收款操作</text>
+        <text class="desc-list-item">增加我的客户可以查看收款明细</text>
+        <text class="desc-list-item">增加进货价可以修改功能和显示</text>
+        <text class="desc-list-item">修改盈收记录的协同操作异常</text>
+        <text class="desc-list-item">编辑我的商品上传图片问题</text>
+        <text class="desc-list-item">修改盈收记录显示</text>
+        <text class="desc-list-item">可以批量上传同型号的产品</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.4 公测版</text>
+        <text class="desc-time">2019.01.15</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">页面操作优化</text>
+        <text class="desc-list-item">优化条形码显示</text>
+        <text class="desc-list-item">增加扫条形码操作</text>
+        <text class="desc-list-item">修改协同操作出库显示问题</text>
+        <text class="desc-list-item">操作记录增加分页</text>
+        <text class="desc-list-item">增加查看客户之间的来往明细</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.3 公测版</text>
+        <text class="desc-time">2019.01.10</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">页面优化</text>
+        <text class="desc-list-item">财务报表利润数据异常修改</text>
+        <text class="desc-list-item">操作记录显示优化</text>
+        <text class="desc-list-item">产品出入显示优化</text>
+        <text class="desc-list-item">协同操作逻辑进行重新设计</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.2 公测版</text>
+        <text class="desc-time">2019.01.08</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">增加我的客户页面</text>
+        <text class="desc-list-item">增加产品出库时可以填写开单明细</text>
+        <text class="desc-list-item">增加操作记录可以撤回操作</text>
+        <text class="desc-list-item">页面显示优化</text>
+        <text class="desc-list-item">添加产品时，可以自定义库存量</text>
+      </view>
+      <text class="desc-content">升级计划</text>
+      <view class="desc-list">
+        <text class="desc-list-item">增加pc端可以导出产品表格数据功能（开发中）</text>
+        <text class="desc-list-item">增加员工权限管理设置</text>
+        <text class="desc-list-item">增加库存盘点页面</text>
+        <text class="desc-list-item">增加供销商页面</text>
+        <text class="desc-list-item">优化条形码显示</text>
+        <text class="desc-list-item">优化条形码操作</text>
+        <text class="desc-list-item">员工操作和本人一致</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.1 公测版</text>
+        <text class="desc-time">2019.01.03</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">增加产品条形码</text>
+        <text class="desc-list-item">增加产品图像上传</text>
+        <text class="desc-list-item">好友管理产品页面，不可滚动修复</text>
+        <text class="desc-list-item">增加通过扫产品条形码获取信息</text>
+        <text class="desc-list-item">页面优化升级</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.1.0 公测版</text>
+        <text class="desc-time">2018.12.27</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">增加与好友共同管理产品的功能，您可以在我的好友页面左滑，与他共同管理产品</text>
+        <text class="desc-list-item">页面优化升级</text>
+        <text class="desc-list-item">产品修改时，单位的错误</text>
+        <text class="desc-list-item">更新使用说明</text>
+        <text class="desc-list-item">操作记录和待我审批增加Tab选项</text>
+        <text class="desc-list-item">产品出库时，价格可以变动</text>
+      </view>
+      <text class="desc-content">升级计划</text>
+      <view class="desc-list">
+        <text class="desc-list-item"></text>
+        <text class="desc-list-item">增加pc端可以导出产品表格数据功能</text>
+      </view>
+    </view>
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.0.9 公测版</text>
+        <text class="desc-time">2018.12.25</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">项目整体页风格的改动</text>
+        <text class="desc-list-item">增加总的操作记录</text>
+        <text class="desc-list-item">增加单个产品的操作记录</text>
+      </view>
+      <text class="desc-content">升级计划</text>
+      <view class="desc-list">
+        <text class="desc-list-item">与好友共同管理产品的开发</text>
+        <text class="desc-list-item">产品出库时，价格可以变动</text>
+      </view>
+    </view>
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.0.8 公测版</text>
+        <text class="desc-time">2018.09.03</text>
+      </view>
+      <text class="desc-content">修复BUG</text>
+        <view class="desc-list">
+          <text class="desc-list-item">新增我的好友</text>
+          <text class="desc-list-item">我的二维码</text>
+          <text class="desc-list-item">修复数据过多，查询不出已添加内容</text>
+          <text class="desc-list-item">修复生成二维码接口</text>
+        </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">我的库存与我的产品整合,取消我的库存</text>
+        <text class="desc-list-item">整合出入库选择产品界面</text>
+        <text class="desc-list-item">增加使用说明</text>
+      </view>
+      <text class="desc-content">升级计划</text>
+      <view class="desc-list">
+        <text class="desc-list-item">【开发中】我的好友（将产品授权给好友申请或授权）</text>
+        <text class="desc-list-item">添加出入库单据（包括折扣）</text>
+        <text class="desc-list-item">增加客户项</text>
+        <text class="desc-list-item">增加申请结果通知</text>
+        <text class="desc-list-item">添加库存盘点</text>
+        <text class="desc-list-item">添加申请出库锁库存</text>
+        <text class="desc-list-item">增加申请出库单</text>
+        <text class="desc-list-item">增加根据时间筛选出入库金额、数量</text>
+        <text class="desc-list-item">导出库存相关数据</text>
+      </view>
+    </view>
+    <view class="describe">
+      <view class="desc-title">
+        <text class="desc-v">v1.0.7 公测版</text>
+        <text class="desc-time">2018.08.15</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text class="desc-list-item">丰富产品二维码分享图片</text>
+        <text class="desc-list-item">整合冗余页面</text>
+      </view>
+    </view>
+    <view class="describe">
+        <view class="desc-title">
+          <text class="desc-v">v1.0.6 公测版</text>
+          <text class="desc-time">2018.08.07</text>
+        </view>
+        <text class="desc-content">优化升级</text>
+        <view class="desc-list">
+          <text class="desc-list-item">产品列表侧滑编辑删除，点击详情</text>
+          <text class="desc-list-item">修复查询结果不二维码</text>
+          <text class="desc-list-item">增加产品单位</text>
+        </view>
+      </view>
+      <view class="describe">
+        <view class="desc-title">
+          <text class="desc-v">v1.0.5 公测版</text>
+          <text class="desc-time">2018.07.26</text>
+        </view>
+        <text class="desc-content">优化升级</text>
+        <view class="desc-list">
+          <text class="desc-list-item">增加审核结果页</text>
+          <text class="desc-list-item">增加入库出库数量的最大值（10000）</text>
+          <text class="desc-list-item">增加扫码申请出库，产品拥有者审核（测试版）</text>
+          <text class="desc-list-item">增加我的库存查看产品二维码（可下载二维码）</text>
+          <text class="desc-list-item">修复进货价格,销售价格数值问题</text>
+          <text class="desc-list-item">修复个人中心用户名称丢失(若旧版本还未看到名称,需删除小程序重新搜索并授权)</text>
+        </view>
+      </view>
+      <view class="describe">
+        <view class="desc-title">
+          <text class="desc-v">v1.0.4 公测版</text>
+          <text class="desc-time">2018.07.17</text>
+        </view>
+        <text class="desc-content">优化升级</text>
+        <view class="desc-list">
+          <text class="desc-list-item">修复财务报表统计数值过长问题</text>
+          <text class="desc-list-item">修复财务报表纵坐标数值问题</text>
+          <text class="desc-list-item">修复优化建议、问题反馈部分用户名称丢失</text>
+        </view>
+      </view>
+      <view class="describe">
+        <view class="desc-title">
+          <text class="desc-v">v1.0.3 公测版</text>
+          <text class="desc-time">2018.07.09</text>
+        </view>
+        <text class="desc-content">优化升级</text>
+        <view class="desc-list">
+          <text class="desc-list-item">完善财务报表统计（新增进货总价、总量，销售总价、总量，总利润）</text>
+          <text class="desc-list-item">添加我的产品、我的库存搜索功能</text>
+        </view>
+      </view>
+      <view class="describe">
+        <view class="desc-title">
+          <text class="desc-v">v1.0.2 公测版</text>
+          <text class="desc-time">2018.07.04</text>
+        </view>
+        <text class="desc-content">优化升级</text>
+        <view class="desc-list">
+          <text class="desc-list-item">添加冷启动</text>
+          <text class="desc-list-item">添加产品进货价、零售价</text>
+        </view>
+      </view>
+      <view class="describe">
+        <view class="desc-title">
+          <text class="desc-v">v1.0.1 公测版</text>
+          <text class="desc-time">2018.06.28</text>
+        </view>
+        <text class="desc-content">修复BUG</text>
+        <view class="desc-list">
+          <text class="desc-list-item">修复iphone手机首页错位问题</text>
+          <text class="desc-list-item">修复分享页未登录跳转到授权页</text>
+        </view>
+        <text class="desc-content">优化升级</text>
+        <view class="desc-list">
+          <text class="desc-list-item">添加长按删除产品</text>
+          <text class="desc-list-item">添加升级日志模块</text>
+        </view>
+      </view>
+      <view class="describe">
+        <view class="desc-title">
+          <text class="desc-v">v1.0.0 内测版</text>
+          <text class="desc-time">2018.06.27</text>
+        </view>
+        <text class="desc-content">开启内测</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <text>Copyright @ {{year}} 谢荣 All Rights Reserved</text>
+    <text>联系方式:1090637044@qq.com</text>
+  </view>
+</view>

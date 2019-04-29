@@ -1,0 +1,62 @@
+<!--当月详情-->
+<view>
+  <swiper indicator-dots="true" indicator-active-color="#fff" class='swiper' autoplay='true'>
+  <block>
+    <swiper-item class="item">
+      <view class='every_item'>
+        <view class='s_num'>{{total_reserve}}</view>
+        <view>库存总量</view>
+      </view>
+      <view class='every_item'>
+        <view class='s_num'>{{total_money}}</view>
+        <view>库存成本</view>
+      </view>
+    </swiper-item>
+
+    <swiper-item class="item">
+      <view class='every_item'>
+        <view class='s_num'>{{detail[2].total1}}</view>
+        <view>客户欠款</view>
+      </view>
+      <view class='every_item'>
+        <view class='s_num'>{{detail[2].total2}}</view>
+        <view>供应商欠款</view>
+      </view>
+    </swiper-item>
+
+    <swiper-item class="item">
+      <view class='every_item'>
+        <view class='s_num'>{{detail[3].total1}}</view>
+        <view>销售收入（本月）</view>
+      </view>
+      <view class='every_item'>
+        <view class='s_num'>{{detail[3].total2}}</view>
+        <view>商品毛利（本月）</view>
+      </view>
+    </swiper-item>
+
+    <swiper-item class="item">
+      <view class='every_item'>
+        <view class='s_num'>{{detail[4].total1}}</view>
+        <view>采购金额（本月）</view>
+      </view>
+      <view class='every_item'>
+        <view class='s_num'>{{detail[4].total2}}</view>
+        <view>商品种类（本月）</view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper> 
+</view>
+
+<i-notice-bar icon="systemprompt" loop>
+    积木舟库存管理系统正式上线啦！
+</i-notice-bar>
+
+<!--操作列表-->
+<view class='o_list'>
+  <navigator wx:for="{{optionsLists}}" wx:key="{{index}}" class='o_item' url="{{item.url}}">
+    <view style='width:100%'><image src='{{item.icon}}' class='o_image'/></view>
+    <view class='o_text'>{{item.name}}</view>
+  </navigator>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "积木舟-关于我们",
+  "usingComponents": {
+    "i-spin": "../../../component/spin/index",
+    "canvasdrawer": "../../../component/canvasdrawer/canvasdrawer"
+  }
+}
