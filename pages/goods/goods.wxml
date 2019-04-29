@@ -57,7 +57,7 @@
 
 <view style='display:flex'>
 
-  <view class='no-data' wx:if="{{contentEmpty}}" style='height:calc(100vh - 202px)'>
+  <view class='no-data' wx:if="{{contentEmpty}}" style='height:calc(100vh - 152px)'>
     <image src='/images/common/no-data.png'></image>
     <text>暂无数据</text>
   </view>

@@ -1,5 +1,6 @@
 const Bmob = require('../../../utils/bmob_new.js');
-var that;
+let that;
+let masterid = wx.getStorageSync("masterid");
 Page({
 
   /*** 页面的初始数据*/
@@ -11,12 +12,14 @@ Page({
   onLoad: function (options) {
     that = this;
 
+    wx.showLoading({title: '加载中...',})
     const query = Bmob.Query("bad_goods");
-    query.equalTo("goods", "==", options.id);
+    query.equalTo("master", "==", masterid);
+    query.include('_User', 'operater')
     query.order("-createdAt");
     query.find().then(res => {
-      console.log(res)
       that.setData({ detail: res});
+      wx.hideLoading();
     });
   },
 

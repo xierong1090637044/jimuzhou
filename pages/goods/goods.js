@@ -3,7 +3,8 @@ const Bmob = require('../../utils/bmob.js');
 const Bmob_new = require('../../utils/bmob_new.js')
 var config = require('../../utils/config.js')
 var _ = require('../../utils/we-lodash.js');
-var userid = '';
+var userid = '';//当前用户id
+let masterid = wx.getStorageSync("masterid")//当前用户老板id
 var now_product;
 var class_text;
 var that;
@@ -433,6 +434,7 @@ Page({
 
     const pointer = Bmob_new.Pointer('_User');
     const poiID = pointer.set(userid);
+    const masterID = pointer.set(masterid);
     const pointer1 = Bmob_new.Pointer('Goods');
     const poiID1 = pointer1.set(product_id);
 
@@ -448,6 +450,7 @@ Page({
       query.set("bad_num", bad_num);
       query.set("beizhu_text", beizhu_text);
       query.set("operater", poiID);
+      query.set("master", masterID);
       query.set("goods", poiID1);
       query.save().then(res => {
         

@@ -22,3 +22,8 @@
   display: flex;
   justify-content: space-between;
 }
+.bad_date
+{
+  text-align: right;
+  width: 100%;
+}

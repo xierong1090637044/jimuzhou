@@ -1,9 +1,13 @@
 <view class='all_list' wx:if="{{detail !=''}}">
           <view  wx:for="{{detail}}" wx:key="{{index}}" style='display:flex;justify-content: space-between;border-bottom:1px solid#ddd;padding:5px 0'>
-              <view>
-                  <view>{{item.createdAt}}</view>
-                  <view>货损数量：￥{{item.bad_num}}</view>
-                  <view wx:if="{{item.beizhu_text != ''}}">备注：{{item.beizhu_text}}</view>
+              <view style='width:100%'>
+                <view>货损数量：￥{{item.bad_num}}</view>
+                <view wx:if="{{item.beizhu_text != ''}}">备注：{{item.beizhu_text}}</view>
+                <view wx:else>备注：未填写</view>
+              </view>
+              <view class='bad_date'>
+                <view style='color:#426ab3'>操作者：{{item.operater.username}}</view>
+                <view style='color:#999'>{{item.createdAt}}</view>
               </view>
           </view>
       </view>

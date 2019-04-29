@@ -11,6 +11,7 @@ Page({
     optionsLists: [
       { name: '入库记录', icon: 'document', url: '/pages/record/order_history/order_history?type=1', color: "#2ca879" },
       { name: '出库记录', icon: 'document', url: '/pages/record/order_history/order_history?type=-1', color: "#f30" },
+      { name: '货损记录', icon: 'document', url: '/pages/record/bad_history/bad_history', color: "#426ab3" },
     ],
   },
 

@@ -116,6 +116,7 @@ Page({
                               })
                               wx.setStorageSync('openid', user.get('userData').openid)
                               wx.setStorageSync('userid', user.id)
+                              wx.setStorageSync('masterid', (user.masterId == null) ? user.id : user.masterId);//判断是老板还是员工
                               wx.setStorageSync('nickName', user.get("nickName"))
                               wx.setStorageSync('username', user.get("username"))
                               wx.setStorageSync('sex', user.get("sex"))
@@ -123,11 +124,7 @@ Page({
                               wx.setStorageSync('country', userInfo.country)
                               wx.setStorageSync('province', userInfo.province)
                               wx.setStorageSync('city', userInfo.city)
-                              setTimeout(function(){
-                                wx.switchTab({
-                                  url: '/pages/index/index',
-                                })
-                              },500)
+                              setTimeout(function(){wx.switchTab({url: '/pages/index/index',})},500)
                               
                             } catch (e) {
                               console.log("登录失败")
@@ -167,6 +164,7 @@ Page({
                                           })
                                           wx.setStorageSync('openid', user.get('userData').openid)
                                           wx.setStorageSync('userid', user.id)
+                                          wx.setStorageSync('masterid', (user.get("masterId") == null) ? user.id : user.get("masterId"))
                                           wx.setStorageSync('nickName', user.get("nickName"))
                                           wx.setStorageSync('username', user.get("username"))
                                           wx.setStorageSync('sex', user.get("sex"))
@@ -174,6 +172,8 @@ Page({
                                           wx.setStorageSync('country', userInfo.country)
                                           wx.setStorageSync('province', userInfo.province)
                                           wx.setStorageSync('city', userInfo.city)
+
+                                          setTimeout(function () { wx.switchTab({ url: '/pages/index/index', }) }, 500)
                                         } catch (e) {
                                           console.log("注册失败")
                                           wx.showToast({
@@ -200,6 +200,7 @@ Page({
                                                 }
                                               });
                                               wx.setStorageSync('openid', userData.get('userData').openid)
+                                              wx.setStorageSync('masterid', (user.get("masterId") == null) ? user.id : user.get("masterId"))
                                               wx.setStorageSync('userid', userData.id)
                                               wx.setStorageSync('nickName', userData.get("nickName"))
                                               wx.setStorageSync('username', userData.get("username"))
@@ -212,6 +213,7 @@ Page({
                                                 userInfo: res.userInfo,
                                                 hasUserInfo: true
                                               })
+                                              setTimeout(function () { wx.switchTab({ url: '/pages/index/index', }) }, 500)
                                             }
                                           })
                                         }
@@ -239,11 +241,13 @@ Page({
                                                     wx.setStorageSync('userid', user.id)
                                                     wx.setStorageSync('nickName', user.get("nickName"))
                                                     wx.setStorageSync('username', user.get("username"))
+                                                    wx.setStorageSync('masterid', (user.get("masterId") == null) ? user.id : user.get("masterId"))
                                                     wx.setStorageSync('sex', user.get("sex"))
                                                     wx.setStorageSync('avatarUrl', user.get("avatarUrl"))
                                                     wx.setStorageSync('country', userInfo.country)
                                                     wx.setStorageSync('province', userInfo.province)
                                                     wx.setStorageSync('city', userInfo.city)
+                                                    setTimeout(function () { wx.switchTab({ url: '/pages/index/index', }) }, 500)
                                                   }
                                                 });
                                               }
