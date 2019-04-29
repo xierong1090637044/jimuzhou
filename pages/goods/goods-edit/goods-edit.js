@@ -85,7 +85,7 @@ Page({
               loading: true
             })
             wx.getStorage({
-              key: 'userid',
+              key: 'masterid',
               success: function (res) {
                 var Goods = Bmob.Object.extend("Goods");
                 var user = new Bmob.User();
@@ -110,7 +110,6 @@ Page({
                     results.set("costPrice", goodsForm.costPrice);
                     results.set("retailPrice", goodsForm.retailPrice);
                     results.set("packingUnit", goodsForm.packingUnit);
-                    results.set("reserve", Number(goodsForm.reserve));
                     results.set("product_info", goodsForm.product_info);
                     results.save(null, {
                       success: function (result) {

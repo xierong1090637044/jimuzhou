@@ -4,7 +4,7 @@ const Bmob_new = require('../../../utils/bmob_new.js')
 var config = require('../../../utils/config.js')
 var _ = require('../../../utils/we-lodash.js');
 var { $Message } = require('../../../component/base/index');
-var userid = '';
+var userid = wx.getStorageSync("masterid");
 var curModule = '';
 var that;
 var type;//库存情况
@@ -232,7 +232,7 @@ Page({
   /*** 生命周期函数--监听页面加载*/
   onLoad: function (options) {
     that = this;
-    userid = wx.getStorageSync("userid");
+    userid = wx.getStorageSync("masterid");
     curModule = options.type;
   },
 

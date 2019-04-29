@@ -4,7 +4,7 @@ var that;
 var input_money;
 var custom_id;
 var friendId;
-var userId = wx.getStorageSync("userid");
+var userId = wx.getStorageSync("masterid");
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
@@ -137,7 +137,7 @@ Page({
           const pointer = Bmob.Pointer('customs');
           const poiID = pointer.set(custom_id);
           const pointer1 = Bmob.Pointer('_User');
-          const poiID1 = pointer1.set(wx.getStorageSync("userid"));
+          const poiID1 = pointer1.set(wx.getStorageSync("masterid"));
           const query = Bmob.Query('debt_history');
           query.set("custom", poiID);
           query.set("master", poiID1)
@@ -173,7 +173,7 @@ Page({
     {
       that.getcustom_list(friendId);
     }else{
-      var userid = wx.getStorageSync("userid");
+      var userid = wx.getStorageSync("masterid");
       that.getcustom_list(userid);
     }
   },
@@ -190,7 +190,7 @@ Page({
       if (friendId != null) {
         that.getcustom_list(friendId);
       } else {
-        that.getcustom_list(wx.getStorageSync("userid"));
+        that.getcustom_list(wx.getStorageSync("masterid"));
       }
       wx.removeStorageSync("is_add");
     }

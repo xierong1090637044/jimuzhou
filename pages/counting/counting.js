@@ -90,7 +90,7 @@ Page({
     }else{
       const query = Bmob_new.Query("Goods");
       query.equalTo("productCode", "==", id);
-      query.equalTo("userId", "==", wx.getStorageSync("userid"));
+      query.equalTo("userId", "==", wx.getStorageSync("masterid"));
       query.find().then(res => {
         console.log(res);
         res[0].now_reserve = res[0].now_reserve;

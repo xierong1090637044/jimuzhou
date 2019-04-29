@@ -102,7 +102,7 @@ Page({
   get_list:function(type,custom,start_data,end_data)
   {
     that.setData({ spinShow:true});
-    var userid = wx.getStorageSync("userid");
+    var userid = wx.getStorageSync("masterid");
     const query = Bmob.Query("order_opreations");
     query.equalTo("master", "==", userid);
     query.equalTo("custom", "==", custom);
@@ -130,7 +130,7 @@ Page({
 
   getallpage: function (type,custom,data)
   {
-    var userid = wx.getStorageSync("userid");
+    var userid = wx.getStorageSync("masterid");
     const query = Bmob.Query("order_opreations");
      query.equalTo("type", '==', opeart_type);
     query.equalTo("master", "==", userid);

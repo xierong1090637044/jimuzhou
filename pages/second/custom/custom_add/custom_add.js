@@ -28,7 +28,7 @@ Page({
       });
     } else {
       that.setData({ loading: true });
-      const userid = wx.getStorageSync("userid");
+      const userid = wx.getStorageSync("masterid");
       const pointer = Bmob.Pointer('_User');
       var poiID;
       

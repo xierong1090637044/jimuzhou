@@ -21,7 +21,7 @@ Page({
     var total_reserve = 0;
     var total_money = 0;
     const query = Bmob.Query("Goods");
-    query.equalTo("userId", "==", wx.getStorageSync("userid"));
+    query.equalTo("userId", "==", wx.getStorageSync("masterid"));
     query.find().then(res => {
       for (var i = 0; i < res.length; i++) {
         total_reserve = total_reserve + res[i].reserve;
@@ -90,8 +90,6 @@ Page({
   onLoad: function (options) {
     that = this;
     userid = wx.getStorageSync("userid");
-
-    that.loadallGoods();
   },
 
   /*** 生命周期函数--监听页面初次渲染完成*/
@@ -100,7 +98,7 @@ Page({
 
   /*** 生命周期函数--监听页面显示*/
   onShow: function () {
-  
+    that.loadallGoods();
   },
 
   /*** 生命周期函数--监听页面隐藏*/

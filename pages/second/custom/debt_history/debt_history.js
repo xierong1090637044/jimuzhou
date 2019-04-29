@@ -15,7 +15,7 @@ Page({
     var real_have_get = 0;
 
     const query = Bmob.Query("debt_history");
-    query.equalTo("master", "==", wx.getStorageSync("userid"));
+    query.equalTo("master", "==", wx.getStorageSync("masterid"));
     query.equalTo("custom", "==", options.id);
     query.find().then(res => {
       console.log(res)
@@ -27,7 +27,7 @@ Page({
       that.setData({ detail: res, real_should_get: real_should_get});
 
       const query = Bmob.Query("order_opreations");
-      query.equalTo("master", "==", wx.getStorageSync("userid"));
+      query.equalTo("master", "==", wx.getStorageSync("masterid"));
       query.equalTo("custom", "==", options.id);
       query.equalTo("debt", ">", 0);
       query.find().then(res => {

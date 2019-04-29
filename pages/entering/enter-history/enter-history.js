@@ -3,7 +3,8 @@ var Bmob = require('../../../utils/bmob.js');
 var Bmob_new = require('../../../utils/bmob_new.js');
 var that;
 
-let masterid = wx.getStorageSync("masterid");
+const masterid = wx.getStorageSync("masterid");
+const userid = wx.getStorageSync("userid");
 Page({
 
   /*** 页面的初始数据*/
@@ -77,7 +78,7 @@ Page({
         //单据
         var tempBills = new Bills();
         var user = new Bmob.User();
-        user.id = wx.getStorageSync('userid');
+        user.id = wx.getStorageSync('masterid');
         tempBills.set('goodsName', that.data.goods[i].goodsName);
         tempBills.set('retailPrice', that.data.goods[i].modify_retailcostPrice);
         tempBills.set('num', that.data.goods[i].num)
@@ -99,12 +100,12 @@ Page({
           operation_ids.push(res[i].id);
           if (i == (res.length - 1)) {
             //console.log("批量新增单据成功", res);
-            var currentUser = Bmob.User.current();
+
             const relation = Bmob_new.Relation('Bills'); // 需要关联的表
             const relID = relation.add(operation_ids);
 
             const pointer = Bmob_new.Pointer('_User')
-            const poiID = pointer.set(currentUser.id);
+            const poiID = pointer.set(userid);
             const masterID = pointer.set(masterid);
 
             const query = Bmob_new.Query('order_opreations');

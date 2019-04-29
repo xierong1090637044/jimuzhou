@@ -21,7 +21,7 @@ Page({
   /** 生命周期函数--监听页面加载*/
   onLoad: function (options) {
     that = this;
-    userid = wx.getStorageSync("userid");;
+    userid = wx.getStorageSync("masterid");
   },
 
   /*** 生命周期函数--监听页面初次渲染完成*/

@@ -62,7 +62,10 @@ Page({
         wx.setStorageSync('username', res.username);
         wx.setStorageSync('userid', res.objectId);
         wx.setStorageSync('avatarUrl', res.avatarUrl)
-        wx.setStorageSync('openid', res.openid)
+        wx.setStorageSync('openid', res.openid);
+        wx.setStorageSync('masterid', res.masterId.objectId);
+
+        setTimeout(function () { wx.switchTab({ url: '/pages/index/index', }) }, 500)
       }).catch(err => {
         wx.showToast({ title: '验证码或手机号错误', icon: "none" })
       });

@@ -81,7 +81,7 @@ Page({
                   }
 
                   var user = new Bmob.User();
-                  user.id = res.data;
+                  user.id = wx.getStorageSync("masterid");
 
                   var add_user = new Bmob.User();
                   add_user.id = wx.getStorageSync("userid");

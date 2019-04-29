@@ -143,9 +143,7 @@ Page({
    */
   onLoad: function (options) {
     that = this;
-    var currentUser = Bmob.User.current();
-    userid = currentUser.id;
-    console.log(currentUser.id);
+    userid =wx.getStorageSync("masterid");
     that.getclass_list();
   },
 

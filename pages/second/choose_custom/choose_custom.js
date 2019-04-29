@@ -76,7 +76,7 @@ Page({
     if (friendId != null) {
       that.getcustom_list(friendId);
     } else {
-      var userid = wx.getStorageSync("userid");
+      var userid = wx.getStorageSync("masterid");
       that.getcustom_list(userid);
     }
   },

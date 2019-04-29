@@ -54,7 +54,7 @@ Page({
     var out_reserve_num = 0;
 
     const query = Bmob.Query("Bills");
-    query.equalTo("userId", "==", wx.getStorageSync("userid"));
+    query.equalTo("userId", "==", wx.getStorageSync("masterid"));
     query.equalTo("createdAt", ">=", selectd_start_data);
     query.equalTo("createdAt", "<=", selectd_end_data);
     

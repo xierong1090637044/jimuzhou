@@ -93,7 +93,7 @@ Page({
                   }
 
                   var user = new Bmob.User();
-                  user.id = res.data;
+                  user.id = wx.getStorageSync("masterid");
                   //判断产品是否已存在
                   var query = new Bmob.Query(Goods);
                   query.equalTo("goodsName", goodsForm.goodsName);
