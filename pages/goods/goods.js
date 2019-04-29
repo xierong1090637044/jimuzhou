@@ -93,7 +93,7 @@ Page({
     wx.setStorageSync('item', JSON.stringify(item));
 
     wx.showActionSheet({
-      itemList: ['查看详情', '货损','查看产品图','编辑产品', '删除产品','取消'],
+      itemList: ['查看详情', '货损','查看产品图','编辑产品', '删除产品'],
       success(res) {
         if (res.tapIndex == 0)
         {
@@ -120,8 +120,6 @@ Page({
           that.handleEditGoods();
         } else if (res.tapIndex == 4) {
           that.handleDelGoods();
-        } else if (res.tapIndex == 5){
-
         }
       },
       fail(res) {

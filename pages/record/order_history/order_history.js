@@ -4,6 +4,7 @@ var c_type;
 var custom_id;
 var select_start_data;
 var select_end_data;
+let opeart_type//出入库类型
 Page({
 
   /*** 页面的初始数据*/
@@ -50,6 +51,7 @@ Page({
   onLoad: function (options) {
     that = this;
     custom_id = options.custom_id;
+    opeart_type = Number(options.type);
   },
 
   /*** 生命周期函数--监听页面初次渲染完成*/
@@ -102,11 +104,9 @@ Page({
     that.setData({ spinShow:true});
     var userid = wx.getStorageSync("userid");
     const query = Bmob.Query("order_opreations");
-    const query1 = query.equalTo("type", '==', 1);
-    const query2 = query.equalTo("type", '==', -1);
-    query.or(query1, query2);
     query.equalTo("master", "==", userid);
     query.equalTo("custom", "==", custom);
+    query.equalTo("type", '==', opeart_type);
     //if (start_data != null) query.equalTo("createdAt", ">", start_data);
     //if (end_data != null) query.equalTo("createdAt", "<", end_data);
     query.include("opreater");
@@ -132,9 +132,7 @@ Page({
   {
     var userid = wx.getStorageSync("userid");
     const query = Bmob.Query("order_opreations");
-    const query1 = query.equalTo("type", '==', 1);
-    const query2 = query.equalTo("type", '==', -1);
-    query.or(query1, query2);
+     query.equalTo("type", '==', opeart_type);
     query.equalTo("master", "==", userid);
     query.equalTo("custom", "==", custom);
     //if (data != null) query.equalTo("createdAt", ">", data);

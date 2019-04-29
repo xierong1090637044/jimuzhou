@@ -1,5 +1,15 @@
 {
   "pages": [
+    "pages/record/record",
+    "pages/record/order_history/detail/detail",
+    "pages/record/order_history/order_history",
+    "pages/record/bad_history/bad_history",
+    "pages/record/counting_history/counting_history",
+
+    "pages/manage/manage",
+    "pages/manage/add_class/add_class",
+    "pages/manage/add_warehouse/add_warehouse",
+    
     "pages/landing/landing",
     "pages/index/index",
     "pages/detail_finance/detail_finance",
@@ -19,8 +29,6 @@
     "pages/entering/enter-history/enter-history",
     "pages/goods/goods-edit/goods-edit",
     "pages/goods/goods",
-    "pages/goods/bad_history/bad_history",
-    "pages/goods/counting_history/counting_history",
     "pages/goods/goods-add/goods-add",
     "pages/mine/mine",
     "pages/mine/my_setting/my_setting",
@@ -28,11 +36,7 @@
     "pages/mine/about-us/about-us",
     "pages/mine/propose/propose",
     "pages/mine/message/message",
-    "pages/mine/add_class/add_class",
-    "pages/mine/add_warehouse/add_warehouse",
     "pages/mine/upgrade/upgrade",
-    "pages/record/order_history/detail/detail",
-    "pages/record/order_history/order_history",
     "pages/friends/friend-together/friend-together",
     "pages/friends/friend-dtl/friend-dtl",
     "pages/friends/enter-history-fri/enter-history-fri",
@@ -44,8 +48,7 @@
     "pages/second/custom/custom_add/custom_add",
     "pages/second/choose_custom/choose_custom",
     "pages/second/custom/debt_history/debt_history",
-    "pages/second/producer/producer",
-    "pages/record/record"
+    "pages/second/producer/producer"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -68,7 +71,7 @@
       {
         "iconPath": "images/index/manage.png",
         "selectedIconPath": "images/index/manage.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/manage/manage",
         "text": "管理"
       },
       {

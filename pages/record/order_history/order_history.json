@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "积木舟-操作记录",
   "usingComponents": {
-    "i-icon": "../../component/icon/index",
-    "i-page": "../../component/page/index"
+    "i-icon": "../../../component/icon/index",
+    "i-page": "../../../component/page/index"
   }
 }

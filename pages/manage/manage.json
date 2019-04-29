@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "积木舟-记录",
+  "navigationBarTitleText": "积木舟-管理",
   "usingComponents": {
     "i-card": "../../component/card/index",
     "i-row": "../../component/row/index",

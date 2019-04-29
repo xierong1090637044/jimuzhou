@@ -9,16 +9,19 @@ Page({
    */
   data: {
     optionsLists: [
-      { name: '入库记录', icon: 'document', url: '/pages/record/order_history/order_history?type=1', color: "#2ca879" },
-      { name: '出库记录', icon: 'document', url: '/pages/record/order_history/order_history?type=-1', color: "#f30" },
+      { name: '员工管理', icon: 'group', url: '/pages/manage/add_class/add_class', color: "#b38c42" },
+      { name: '产品管理', icon: 'label', url: '/pages/goods/goods', color: "#af42b3" },
+      { name: '客户管理', icon: 'addressbook', url: '/pages/second/custom/custom', color: "#82b342" },
+      { name: '供货商管理', icon: 'mine', url: '/pages/second/producer/producer', color: "#42b3af" },
+      { name: '仓库管理', icon: 'homepage', url: '/pages/manage/add_warehouse/add_warehouse', color: "#b34742" },
+      { name: '产品类别管理', icon: 'accessory', url: '/pages/manage/add_class/add_class', color:"#426ab3"},
     ],
   },
-
 
   /** 生命周期函数--监听页面加载*/
   onLoad: function (options) {
     that = this;
-    userid = wx.getStorageSync("userid");;
+    userid = wx.getStorageSync("userid");
   },
 
   /*** 生命周期函数--监听页面初次渲染完成*/
