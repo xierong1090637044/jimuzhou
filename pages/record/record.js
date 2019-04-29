@@ -11,6 +11,8 @@ Page({
     optionsLists: [
       { name: '入库记录', icon: 'document', url: '/pages/record/order_history/order_history?type=1', color: "#2ca879" },
       { name: '出库记录', icon: 'document', url: '/pages/record/order_history/order_history?type=-1', color: "#f30" },
+      { name: '客户退货记录', icon: 'document', url: '/pages/record/order_history/order_history?type=2', color: "#b3b242" },
+      { name: '盘点记录', icon: 'document', url: '/pages/record/order_history/order_history?type=3', color: "#b3424a" },
       { name: '货损记录', icon: 'document', url: '/pages/record/bad_history/bad_history', color: "#426ab3" },
     ],
   },

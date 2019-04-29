@@ -2,6 +2,8 @@
 var Bmob = require('../../../utils/bmob.js');
 var Bmob_new = require('../../../utils/bmob_new.js');
 var that;
+
+let masterid = wx.getStorageSync("masterid");
 Page({
 
   /*** 页面的初始数据*/
@@ -140,13 +142,14 @@ Page({
 
             const pointer = Bmob_new.Pointer('_User')
             const poiID = pointer.set(currentUser.id);
+            const masterID = pointer.set(masterid);
 
             const query = Bmob_new.Query('order_opreations');
             query.set("relations", relID);
             query.set("beizhu", that.data.beizhu_text);
             query.set("type", 2);
             query.set("opreater", poiID);
-            query.set("master", poiID);
+            query.set("master", masterID);
             query.set('goodsName', that.data.goods[0].goodsName);
             query.set('real_money', Number(that.data.real_money));
 
