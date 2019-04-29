@@ -12,15 +12,12 @@ Page({
       {name: '产品出库', icon: '../../images/index/delivery.png',url: '/pages/common/goods-select/goods-select?type=delivery'},
       {name: '退货入库', icon: '../../images/index/return_goods.png',url: '/pages/common/goods-select/goods-select?type=returing'},
       {name: '库存盘点', icon: '../../images/index/stocking.png',url: '/pages/common/goods-select/goods-select?type=counting'},
-      //{name: '盈收记录', icon: '../../images/index/stock.png',url: '/pages/detail_finance/detail_finance'},
-      //{name: '操作记录', icon: '../../images/index/order_history.png',url: '/pages/order_history/order_history'},
-      //{name: '财务报表', icon: '../../images/index/finance.png',url: '/pages/finance/finance'},
-      //{name: '协同管理', icon: '../../images/index/mine.png',url: '/pages/friends/friends'},
     ],
   },
 
   //得到总库存数和总金额
   loadallGoods: function () {
+    wx.showLoading({title: '加载中...'})
     var total_reserve = 0;
     var total_money = 0;
     const query = Bmob.Query("Goods");
@@ -31,6 +28,7 @@ Page({
         total_money = total_money + res[i].reserve * res[i].costPrice;
       }
       that.setData({ total_reserve: total_reserve, total_money: total_money, total_products: res.length });
+      wx.hideLoading();
     });
   },
 

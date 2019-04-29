@@ -12,39 +12,6 @@
         <view>库存成本</view>
       </view>
     </swiper-item>
-
-    <swiper-item class="item">
-      <view class='every_item'>
-        <view class='s_num'>{{detail[2].total1}}</view>
-        <view>客户欠款</view>
-      </view>
-      <view class='every_item'>
-        <view class='s_num'>{{detail[2].total2}}</view>
-        <view>供应商欠款</view>
-      </view>
-    </swiper-item>
-
-    <swiper-item class="item">
-      <view class='every_item'>
-        <view class='s_num'>{{detail[3].total1}}</view>
-        <view>销售收入（本月）</view>
-      </view>
-      <view class='every_item'>
-        <view class='s_num'>{{detail[3].total2}}</view>
-        <view>商品毛利（本月）</view>
-      </view>
-    </swiper-item>
-
-    <swiper-item class="item">
-      <view class='every_item'>
-        <view class='s_num'>{{detail[4].total1}}</view>
-        <view>采购金额（本月）</view>
-      </view>
-      <view class='every_item'>
-        <view class='s_num'>{{detail[4].total2}}</view>
-        <view>商品种类（本月）</view>
-      </view>
-    </swiper-item>
   </block>
 </swiper> 
 </view>
@@ -60,3 +27,8 @@
     <view class='o_text'>{{item.name}}</view>
   </navigator>
 </view>
+
+<view class='scan_code' bindtap='scan_code'>
+     <i class="iconfont icon-saomiao icon-scan"></i>
+     <text>扫描产品条形码</text>
+  </view>
