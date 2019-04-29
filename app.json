@@ -31,8 +31,8 @@
     "pages/mine/add_class/add_class",
     "pages/mine/add_warehouse/add_warehouse",
     "pages/mine/upgrade/upgrade",
-    "pages/order_history/detail/detail",
-    "pages/order_history/order_history",
+    "pages/record/order_history/detail/detail",
+    "pages/record/order_history/order_history",
     "pages/friends/friend-together/friend-together",
     "pages/friends/friend-dtl/friend-dtl",
     "pages/friends/enter-history-fri/enter-history-fri",
@@ -44,7 +44,8 @@
     "pages/second/custom/custom_add/custom_add",
     "pages/second/choose_custom/choose_custom",
     "pages/second/custom/debt_history/debt_history",
-    "pages/second/producer/producer"
+    "pages/second/producer/producer",
+    "pages/record/record"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -73,8 +74,8 @@
       {
         "iconPath": "images/index/report.png",
         "selectedIconPath": "images/index/report.png",
-        "pagePath": "pages/order_history/order_history",
-        "text": "报表"
+        "pagePath": "pages/record/record",
+        "text": "记录"
       },
       {
         "iconPath": "images/index/person.png",

@@ -1,4 +1,4 @@
-var Bmob = require('../../utils/bmob_new.js');
+var Bmob = require('../../../utils/bmob_new.js');
 var that;
 var c_type;
 var custom_id;
@@ -14,7 +14,7 @@ Page({
   },
 
   //tab改变
-  handleChange({ detail }) {
+  /*handleChange({ detail }) {
     this.setData({
       current: detail.key,
     });
@@ -28,7 +28,7 @@ Page({
       that.get_list("all", custom_id);
       that.getallpage("all", custom_id);
     }
-  },
+  },*/
 
   //页码改变
   handlePageChange({ detail }) {
@@ -107,15 +107,15 @@ Page({
     query.or(query1, query2);
     query.equalTo("master", "==", userid);
     query.equalTo("custom", "==", custom);
-    if (start_data != null) query.equalTo("createdAt", ">", start_data);
-    if (end_data != null) query.equalTo("createdAt", "<", end_data);
+    //if (start_data != null) query.equalTo("createdAt", ">", start_data);
+    //if (end_data != null) query.equalTo("createdAt", "<", end_data);
     query.include("opreater");
     query.limit(that.data.limit);
     query.skip(that.data.limit*(that.data.page-1));
-    if(type =="month")
-    {
-      query.equalTo("createdAt", ">", that.getDay(-30));
-    }
+    //if(type =="month")
+    //{
+    //  query.equalTo("createdAt", ">", that.getDay(-30));
+    //}
     query.order("-createdAt");
     query.find().then(res => {
       var items_length = res.length;
@@ -137,10 +137,10 @@ Page({
     query.or(query1, query2);
     query.equalTo("master", "==", userid);
     query.equalTo("custom", "==", custom);
-    if (data != null) query.equalTo("createdAt", ">", data);
-    if (type == "month") {
-      query.equalTo("createdAt", ">", that.getDay(-30));
-    }
+    //if (data != null) query.equalTo("createdAt", ">", data);
+    //if (type == "month") {
+    //  query.equalTo("createdAt", ">", that.getDay(-30));
+    //}
     query.find().then(res => {
       that.setData({
         all_page: Math.ceil(res.length / that.data.limit) ,
