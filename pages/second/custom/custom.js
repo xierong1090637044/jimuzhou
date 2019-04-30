@@ -21,6 +21,7 @@ Page({
     const query = Bmob.Query("customs");
     query.order("custom_type");
     query.equalTo("parent", "==", id);
+    query.limit(1000);
     query.find().then(res => {
       if(res.length == 0)
       {
