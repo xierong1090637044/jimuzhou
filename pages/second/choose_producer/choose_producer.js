@@ -7,15 +7,15 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     hidden: true,
-    customs: [],
+    producers: [],
     isEmpty: false
   },
 
   //得到客户列表
-  getcustom_list: function (id) {
+  getproducer_list: function (id) {
     wx.showLoading({ title: '加载中...' })
 
-    const query = Bmob.Query("customs");
+    const query = Bmob.Query("producers");
     query.equalTo("parent", "==", id);
     query.limit(1000)
     query.find().then(res => {
@@ -27,7 +27,7 @@ Page({
         wx.hideLoading();
       } else {
         that.setData({
-          customs: res,
+          producers: res,
           isEmpty: false
         });
         wx.hideLoading();
@@ -40,8 +40,8 @@ Page({
     wx.showLoading({ title: '加载中...' });
 
     var name = e.detail.value;
-    const query = Bmob.Query("customs");
-    (name == '') ? that.getcustom_list() : query.equalTo("custom_name", "==", name);
+    const query = Bmob.Query("producers");
+    (name == '') ? that.getproducer_list() : query.equalTo("producer_name", "==", name);
     query.find().then(res => {
       if (res.length == 0) {
         that.setData({
@@ -50,7 +50,7 @@ Page({
         wx.hideLoading();
       } else {
         that.setData({
-          customs: res,
+          producers: res,
           isEmpty: false
         });
         wx.hideLoading();
@@ -61,10 +61,10 @@ Page({
   //点击得到详情
   getdetail: function (e) {
     var id = e.currentTarget.dataset.id;
-    const query = Bmob.Query('customs');
+    const query = Bmob.Query('producers');
     query.get(id).then(res => {
-       wx.navigateBack();
-       wx.setStorageSync("custom", res);
+      wx.navigateBack();
+      wx.setStorageSync("producer", res);
     }).catch(err => {
       console.log(err)
     })
@@ -75,10 +75,10 @@ Page({
 
     friendId = options.friendId;
     if (friendId != null) {
-      that.getcustom_list(friendId);
+      that.getproducer_list(friendId);
     } else {
       var userid = wx.getStorageSync("masterid");
-      that.getcustom_list(userid);
+      that.getproducer_list(userid);
     }
   },
 
@@ -89,14 +89,14 @@ Page({
   onShow: function () {
     var is_add = wx.getStorageSync("is_add");
     if (is_add) {
-      that.getcustom_list();
+      that.getproducer_list();
       wx.removeStorageSync("is_add");
     }
   },
 
   goto_add: function () {
     wx.navigateTo({
-      url: '../custom/custom_add/custom_add',
+      url: '../producer/producer_add/producer_add',
     })
   },
 });

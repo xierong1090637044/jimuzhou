@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/landing/landing",
     "pages/staff_landing/staff_landing",
     "pages/second/staff/staff",
@@ -42,7 +41,8 @@
     "pages/second/custom/debt_history/debt_history",
     "pages/second/producer/producer",
     "pages/second/staff/staff_add/staff_add",
-    "pages/second/producer/producer_add/producer_add"
+    "pages/second/producer/producer_add/producer_add",
+    "pages/second/choose_producer/choose_producer"
   ],
   "window": {
     "navigationBarTextStyle": "white",
