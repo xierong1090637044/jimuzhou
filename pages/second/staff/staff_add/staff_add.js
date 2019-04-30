@@ -2,7 +2,6 @@
 var { $Message } = require('../../../../component/base/index');
 const Bmob = require('../../../../utils/bmob_new.js');
 var that;
-let friendId;
 let rights={};
 Page({
 
@@ -48,9 +47,9 @@ Page({
   },
 
   handleAddstaffs: function (e) {
-    var goodsForm = e.detail.value
-
-    console.log(goodsForm)
+    wx.showLoading({title: '上传中...'})
+    let goodsForm = e.detail.value
+    //console.log(goodsForm)
     //先进行表单非空验证
     if (goodsForm.staff_type == null) {
       $Message({
@@ -72,71 +71,50 @@ Page({
       });
     } else {
 
-      const userid = wx.getStorageSync("masterid");
-      const pointer = Bmob.Pointer('_User');
-      let poiID = pointer.set(userid); 
-      
-      const query = Bmob.Query('staffs');
-      query.set("staff_type", that.daxie(goodsForm.staff_type));
-      query.set("username", goodsForm.staff_name);
-      query.set("nickName", goodsForm.staff_name);
-      query.set("password", goodsForm.staff_phone);
-      query.set("mobilePhoneNumber", goodsForm.staff_phone);
-      query.set("rights", rights);
-      query.set("address", (goodsForm.staff_address == null) ? '' : goodsForm.staff_address);
-      query.set("avatarUrl", "http://bmob-cdn-23134.b0.upaiyun.com/2019/04/29/4705b31340bfff8080c068f52fd17e2c.png");
-      query.set("masterId", poiID);
-      (that.data.staff != null) ? query.set("id", that.data.staff.objectId) : null;
-      query.save().then(res => {
-        wx.setStorageSync("is_add", true);
-        if (that.data.staff != null) {
-          wx.showToast({
-            title: '修改成功',
-          })
-        } else {
-          wx.showToast({
-            title: '添加成功',
-          })
-          that.setData({ staff: null })
-        }
-      }).catch(err => {
-        console.log(err)
-        if (err.code == 202 || err.code == 301 || err.code == 209) {
-          $Message({
-            content: err.error,
-            type: 'warning',
-            duration: 5
-          });
-        }
-      })
+      const query = Bmob.Query("staffs");
+      query.equalTo("mobilePhoneNumber", "==", goodsForm.staff_phone);
+      query.find().then(res => {
+        //console.log(res)
+        wx.hideLoading();
+
+        const userid = wx.getStorageSync("masterid");
+        const pointer = Bmob.Pointer('_User');
+        let poiID = pointer.set(userid);
+
+        const query = Bmob.Query('staffs');
+        query.set("staff_type", that.daxie(goodsForm.staff_type));
+        query.set("username", goodsForm.staff_name);
+        query.set("nickName", goodsForm.staff_name);
+        query.set("password", goodsForm.staff_phone);
+        query.set("mobilePhoneNumber", goodsForm.staff_phone);
+        query.set("rights", rights);
+        query.set("address", (goodsForm.staff_address == null) ? '' : goodsForm.staff_address);
+        query.set("avatarUrl", "http://bmob-cdn-23134.b0.upaiyun.com/2019/04/29/4705b31340bfff8080c068f52fd17e2c.png");
+        query.set("masterId", poiID);
+        (that.data.staff != null) ? query.set("id", that.data.staff.objectId) : null;
+        query.save().then(res => {
+          wx.setStorageSync("is_add", true);
+          wx.redirectTo({ url: '../staff' });
+
+          if (that.data.staff != null) {
+            wx.showToast({ title: '修改成功', })
+          } else {
+            wx.showToast({ title: '添加成功', })
+            that.setData({ staff: null })
+          }
+        }).catch(err => {
+          console.log(err)
+          if (err.code == 202 || err.code == 301 || err.code == 209) {
+            $Message({
+              content: err.error,
+              type: 'warning',
+              duration: 5
+            });
+          }
+        })
+      });
 
     }
-  },
-
-  //删除这条记录
-  _delete: function () {
-    wx.showModal({
-      title: '提示',
-      content: '是否删除此客户',
-      success(res) {
-        if (res.confirm) {
-          const query = Bmob.Query('staffs');
-          query.destroy(that.data.staff.objectId).then(res => {
-            console.log(res)
-            wx.showToast({
-              title: '删除成功',
-              duration: 1000,
-              success: function () {
-                wx.navigateBack();
-                wx.setStorageSync("is_add", true);
-              }
-            })
-          }).catch(err => {
-            console.log(err)
-          })
-        }
-      }
-    })
   },
 
   daxie: function (value) {
@@ -144,28 +122,29 @@ Page({
     return value.toUpperCase()
   },
 
-  //联系他点击
-  make_phone: function () {
-    wx.makePhoneCall({
-      phoneNumber: that.data.staff.staff_phone
-    })
-  },
-
-  //查看来往记录点击
-  getmoney_detail: function () {
-    wx.navigateTo({
-      url: '../../../order_history/order_history?staff_id=' + that.data.staff.objectId,
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     that = this;
-    var id = options.id;
     rights.current = [];
     rights.recodecurrent = [];
+
+    if (options.id != null) {
+      wx.setNavigationBarTitle({title: '积木舟-修改员工'})
+
+      const query = Bmob.Query('staffs');
+      query.get(options.id).then(res => {
+        //console.log("员工详情："res)
+        that.setData({ staff: res, current: res.rights.current, recodecurrent: res.rights.recodecurrent });
+        rights.current = res.rights.current;
+        rights.recodecurrent = res.rights.recodecurrent;
+        
+      }).catch(err => {
+        console.log(err)
+      })
+    }
   },
 
   /**

@@ -59,18 +59,35 @@ Page({
 
   //点击查看详情
   getdetail: function (e) {
-    var id = e.currentTarget.dataset.id;
+    let id = e.currentTarget.dataset.id;
     wx.showActionSheet({
       itemList: ['编辑', '删除'],
       success(res) {
         console.log(res.tapIndex)
         if (res.tapIndex == 0) {
           wx.navigateTo({
-            url: 'custom_add/custom_add?id=' + id,
+            url: 'staff_add/staff_add?id=' + id,
           })
         } else if (res.tapIndex == 1) {
-          custom_id = id;
-          that.setData({ visible: true })
+          console.log(id)
+          wx.showModal({
+            title: '提示',
+            content: '确定删除此员工吗？',
+            success(res) {
+              if (res.confirm) {
+                wx.showLoading({title: '删除中...'})
+                const query = Bmob.Query('staffs');
+                query.destroy(id).then(res => {
+                  wx.hideLoading();
+                  that.getcustom_list(userId);
+                }).catch(err => {
+                  console.log(err)
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
         }
       },
       fail(res) {

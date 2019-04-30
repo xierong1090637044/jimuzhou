@@ -175,6 +175,8 @@ Page({
             const poiID = pointer.set(userid);
             const masterID = pointer.set(masterid);
 
+            console.log(poiID, masterID);
+
             const query = Bmob_new.Query('order_opreations');
             query.set("relations", relID);
             query.set("beizhu", that.data.beizhu_text);

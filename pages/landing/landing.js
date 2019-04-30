@@ -22,7 +22,8 @@ Page({
       wx.showToast({title: '请输入正确的手机号',icon:"none"})
     }else{
       let params = {
-        mobilePhoneNumber: phone_number //string
+        mobilePhoneNumber: phone_number, //string
+        template:"积木舟"
       }
       Bmob_new.requestSmsCode(params).then(function (response) {
         wx.showToast({ title: '发送成功' });
@@ -63,7 +64,7 @@ Page({
         wx.setStorageSync('userid', res.objectId);
         wx.setStorageSync('avatarUrl', res.avatarUrl)
         wx.setStorageSync('openid', res.openid);
-        wx.setStorageSync('masterid', res.masterId.objectId);
+        wx.setStorageSync('masterid', (res.masterId.objectId == '') ? res.objectId : res.masterId.objectId);
         wx.setStorageSync('sex', res.masterId.sex)
         wx.setStorageSync('country', res.masterId.country)
         wx.setStorageSync('province', res.masterId.province)

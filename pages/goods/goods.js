@@ -433,7 +433,7 @@ Page({
     const last_bad_num = Number(now_product.bad_num);
 
     const pointer = Bmob_new.Pointer('_User');
-    const poiID = pointer.set(userid);
+    const poiID = pointer.set(wx.getStorageSync("userid"));
     const masterID = pointer.set(masterid);
     const pointer1 = Bmob_new.Pointer('Goods');
     const poiID1 = pointer1.set(product_id);

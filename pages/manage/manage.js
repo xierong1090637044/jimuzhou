@@ -43,20 +43,11 @@ Page({
       that.setData({ optionsLists: staff_options })
 
       const query = Bmob.Query("staffs");
-      query.equalTo("mobilePhoneNumber", "==", wx.getStorageSync("mobilePhoneNumber"));
-      query.equalTo("password", "==", wx.getStorageSync("password"));
-      query.find().then(res => {
-        wx.setStorageSync('now_user', res[0]);
-        wx.setStorageSync('username', res[0].username);
-        wx.setStorageSync('userid', res[0].objectId);
-        wx.setStorageSync('avatarUrl', res[0].avatarUrl)
-        wx.setStorageSync('openid', res[0].password);
-        wx.setStorageSync('mobilePhoneNumber', res[0].mobilePhoneNumber);
-        wx.setStorageSync('password', res[0].password);
-        wx.setStorageSync('masterid', res[0].masterId.objectId);
-        wx.setStorageSync('country', res[0].address);
-        wx.setStorageSync('rights', res[0].rights);
-      });
+      query.get(wx.getStorageSync("staff")).then(res => {
+        wx.setStorageSync('rights', res.rights);
+      }).catch(err => {
+        console.log(err)
+      })
     } else {
       that.setData({
         optionsLists: [

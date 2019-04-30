@@ -22,7 +22,7 @@
         <avatar class="round lg">{{item.staff_type}}</avatar>
         <view class='content'>
           <view class='text-grey'>{{item.username}}</view>
-          <view class='text-gray text-sm' style='margin-top:5px;'>联系电话：{{item.mobilePhoneNumber}}</view>
+          <view class='text-gray text-sm' style='margin-top:5px;'>账号：{{item.mobilePhoneNumber}}</view>
         </view>
       </item>
     </list>

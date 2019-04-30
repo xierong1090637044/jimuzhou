@@ -5,9 +5,9 @@
 
     <i-panel title="基本信息">
       <i-input title="员工编号" value="{{staff.staff_type}}" name="staff_type" placeholder="必填项，姓名首字母" maxlength='1'/>
-      <i-input title="员工姓名" value="{{staff.staff_name}}" name="staff_name" placeholder="必填项，员工姓名" maxlength='8'/>
-      <i-input title="手机账号" value="{{staff.staff_phone}}" name="staff_phone" placeholder="必填项，手机账号" maxlength='11'/>
-      <i-input title="联系地址" value="{{staff.staff_address}}" name="staff_address" placeholder="联系地址" />
+      <i-input title="员工姓名" value="{{staff.username}}" name="staff_name" placeholder="必填项，员工姓名" maxlength='8'/>
+      <i-input title="手机账号" value="{{staff.mobilePhoneNumber}}" name="staff_phone" placeholder="必填项，手机账号" maxlength='11'/>
+      <i-input title="联系地址" value="{{staff.address}}" name="staff_address" placeholder="联系地址" />
     </i-panel>
 
     <view class="caption-wrap">

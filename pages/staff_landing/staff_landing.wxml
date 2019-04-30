@@ -14,10 +14,10 @@
 <form bindsubmit="formSubmit">
   <view class='input_view'><input placeholder='请输入手机号' class='input_element' name="phone" bindinput='get_InputPhone' maxlength='11'></input></view>
   <view class='input_view_flex'>
-    <view style='width:100%'><input placeholder='请输入密码' class='input_element'  name="password"></input></view>
+    <view style='width:100%'><input placeholder='请输入密码' class='input_element'  name="password" bindinput='get_PassWord'></input></view>
   </view>
 
-  <view><button class='login_button' plain="true" form-type="submit" hover-class="bg_button">登陆</button></view>
+  <view><button class='login_button' plain="true" hover-class="bg_button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登陆</button></view>
 </form>
 </view>
 
