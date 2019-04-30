@@ -19,10 +19,10 @@
   <block wx:for="{{customs}}" wx:key>
     <list class="menu menu-avatar no-padding" data-id='{{item.objectId}}' bindtap="getdetail">
       <item>
-        <avatar class="round lg">{{item.custom_type}}</avatar>
+        <avatar class="round lg">{{item.staff_type}}</avatar>
         <view class='content'>
-          <view class='text-grey'>{{item.custom_name}}</view>
-          <view class='text-gray text-sm' style='margin-top:5px;'>联系电话：{{item.custom_phone}}</view>
+          <view class='text-grey'>{{item.username}}</view>
+          <view class='text-gray text-sm' style='margin-top:5px;'>联系电话：{{item.mobilePhoneNumber}}</view>
         </view>
       </item>
     </list>

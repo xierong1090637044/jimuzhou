@@ -19,7 +19,13 @@
   </view>
 
   <view><button class='login_button' plain="true" form-type="submit" hover-class="bg_button">登陆</button></view>
-  <view><button class="confirm_btton" open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信直接登录</button></view>
+  <view>
+    <button class="confirm_btton" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      微信直接登录
+    </button>
+  </view>
+
+  <navigator open-type='navigate' url='../staff_landing/staff_landing'><button class='staff_login_button' plain="true"  hover-class="bg_button">员工登陆</button></navigator>
 </form>
 </view>
 

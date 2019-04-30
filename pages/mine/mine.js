@@ -27,7 +27,7 @@ Page({
   logout:function()
   {
     wx.clearStorageSync();
-    wx.redirectTo({
+    wx.reLaunch({
       url: '/pages/landing/landing',
     })
   },

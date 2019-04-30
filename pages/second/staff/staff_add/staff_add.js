@@ -27,6 +27,7 @@ Page({
     recodecurrent: [],
   },
 
+  //管理页面的权限
   handlemanageChange({ detail = {} }) {
     const index = this.data.current.indexOf(detail.value);
     index === -1 ? this.data.current.push(detail.value) : this.data.current.splice(index, 1);
@@ -36,12 +37,14 @@ Page({
     rights.current = this.data.current;
   },
 
+  //记录页面的权限
   handlerecodeChange({ detail = {} }) {
-    const index = this.data.current.indexOf(detail.value);
-    index === -1 ? this.data.current.push(detail.value) : this.data.current.splice(index, 1);
+    const index = this.data.recodecurrent.indexOf(detail.value);
+    index === -1 ? this.data.recodecurrent.push(detail.value) : this.data.recodecurrent.splice(index, 1);
     this.setData({
-      recodecurrent: this.data.current
+      recodecurrent: this.data.recodecurrent
     });
+    rights.recodecurrent = this.data.recodecurrent;
   },
 
   handleAddstaffs: function (e) {
@@ -79,6 +82,7 @@ Page({
       query.set("nickName", goodsForm.staff_name);
       query.set("password", goodsForm.staff_phone);
       query.set("mobilePhoneNumber", goodsForm.staff_phone);
+      query.set("rights", rights);
       query.set("address", (goodsForm.staff_address == null) ? '' : goodsForm.staff_address);
       query.set("avatarUrl", "http://bmob-cdn-23134.b0.upaiyun.com/2019/04/29/4705b31340bfff8080c068f52fd17e2c.png");
       query.set("masterId", poiID);

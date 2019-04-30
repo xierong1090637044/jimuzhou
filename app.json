@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/landing/landing",
+    "pages/staff_landing/staff_landing",
     "pages/second/staff/staff",
-    
     "pages/record/record",
     "pages/record/order_history/detail/detail",
     "pages/record/order_history/order_history",
@@ -13,7 +13,6 @@
     "pages/index/index",
     "pages/detail_finance/detail_finance",
     "pages/producer/producer",
-    
     "pages/common/goods-select/goods-select",
     "pages/common/goods-dtl/goods-dtl",
     "pages/instruction/instruction",
@@ -36,7 +35,6 @@
     "pages/mine/propose/propose",
     "pages/mine/message/message",
     "pages/mine/upgrade/upgrade",
-
     "pages/second/custom/custom",
     "pages/second/custom/custom_add/custom_add",
     "pages/second/choose_custom/choose_custom",

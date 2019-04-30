@@ -1,10 +1,7 @@
 const app = getApp();
 const Bmob = require('../../../utils/bmob_new.js');
-var that;
-var input_money;
-var custom_id;
-var friendId;
-const userId = wx.getStorageSync("masterid");
+let that;
+let userId = wx.getStorageSync("masterid");
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
@@ -17,15 +14,12 @@ Page({
 
   //得到客户列表
   getcustom_list: function (id) {
-    const query = Bmob.Query("customs");
+    const query = Bmob.Query("staffs");
     query.order("custom_type");
-    query.equalTo("parent", "==", id);
+    query.equalTo("masterId", "==", id);
     query.find().then(res => {
       if (res.length == 0) {
-        that.setData({
-          isEmpty: true,
-          spinShow: false
-        });
+        that.setData({isEmpty: true,spinShow: false});
       } else {
         that.setData({
           customs: res,
@@ -65,31 +59,24 @@ Page({
 
   //点击查看详情
   getdetail: function (e) {
-    if (friendId == null) {
-      var id = e.currentTarget.dataset.id;
-      wx.showActionSheet({
-        itemList: ['查看详情', '收款', "收款记录"],
-        success(res) {
-          console.log(res.tapIndex)
-          if (res.tapIndex == 0) {
-            wx.navigateTo({
-              url: 'custom_add/custom_add?id=' + id,
-            })
-          } else if (res.tapIndex == 1) {
-            custom_id = id;
-            that.setData({ visible: true })
-          } else if (res.tapIndex == 2) {
-            wx.navigateTo({
-              url: 'debt_history/debt_history?id=' + id,
-            })
-          }
-        },
-        fail(res) {
-          console.log(res.errMsg)
+    var id = e.currentTarget.dataset.id;
+    wx.showActionSheet({
+      itemList: ['编辑', '删除'],
+      success(res) {
+        console.log(res.tapIndex)
+        if (res.tapIndex == 0) {
+          wx.navigateTo({
+            url: 'custom_add/custom_add?id=' + id,
+          })
+        } else if (res.tapIndex == 1) {
+          custom_id = id;
+          that.setData({ visible: true })
         }
-      })
-    }
-
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
   },
 
   onLoad(options) {
