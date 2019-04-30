@@ -142,7 +142,8 @@ Page({
 
             const pointer = Bmob_new.Pointer('_User')
             const poiID = pointer.set(userid);
-            const masterID = pointer.set(masterid);
+            const pointer1 = Bmob_new.Pointer('_User')
+            const masterID = pointer1.set(masterid);
 
             console.log(poiID, masterID)
 
