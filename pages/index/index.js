@@ -17,7 +17,6 @@ Page({
 
   //得到总库存数和总金额
   loadallGoods: function () {
-    wx.showLoading({title: '加载中...'})
     var total_reserve = 0;
     var total_money = 0;
     const query = Bmob.Query("Goods");
@@ -28,7 +27,6 @@ Page({
         total_money = total_money + res[i].reserve * res[i].costPrice;
       }
       that.setData({ total_reserve: total_reserve, total_money: total_money, total_products: res.length });
-      wx.hideLoading();
     });
   },
 

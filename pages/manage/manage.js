@@ -9,7 +9,7 @@ Page({
    */
   data: {
     optionsLists: [
-      { name: '员工管理', icon: 'group', url: '/pages/manage/add_class/add_class', color: "#b38c42" },
+      { name: '员工管理', icon: 'group', url: '/pages/second/staff/staff', color: "#b38c42" },
       { name: '产品管理', icon: 'label', url: '/pages/goods/goods', color: "#af42b3" },
       { name: '客户管理', icon: 'addressbook', url: '/pages/second/custom/custom', color: "#82b342" },
       { name: '供货商管理', icon: 'mine', url: '/pages/second/producer/producer', color: "#42b3af" },

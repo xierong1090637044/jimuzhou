@@ -1,21 +1,19 @@
 {
   "pages": [
     "pages/landing/landing",
+    "pages/second/staff/staff",
     
     "pages/record/record",
     "pages/record/order_history/detail/detail",
     "pages/record/order_history/order_history",
     "pages/record/bad_history/bad_history",
-
     "pages/manage/manage",
     "pages/manage/add_class/add_class",
     "pages/manage/add_warehouse/add_warehouse",
-    
-    
     "pages/index/index",
     "pages/detail_finance/detail_finance",
     "pages/producer/producer",
-    "pages/friends/friends",
+    
     "pages/common/goods-select/goods-select",
     "pages/common/goods-dtl/goods-dtl",
     "pages/instruction/instruction",
@@ -38,18 +36,13 @@
     "pages/mine/propose/propose",
     "pages/mine/message/message",
     "pages/mine/upgrade/upgrade",
-    "pages/friends/friend-together/friend-together",
-    "pages/friends/friend-dtl/friend-dtl",
-    "pages/friends/enter-history-fri/enter-history-fri",
-    "pages/friends/goods_select_fri/goods_select_fri",
-    "pages/friends/order_history_fri/order_history_fri",
-    "pages/friends/goods-fri/goods-fri",
-    "pages/friends/delivery-history-fri/delivery-history-fri",
+
     "pages/second/custom/custom",
     "pages/second/custom/custom_add/custom_add",
     "pages/second/choose_custom/choose_custom",
     "pages/second/custom/debt_history/debt_history",
-    "pages/second/producer/producer"
+    "pages/second/producer/producer",
+    "pages/second/staff/staff_add/staff_add"
   ],
   "window": {
     "navigationBarTextStyle": "white",
