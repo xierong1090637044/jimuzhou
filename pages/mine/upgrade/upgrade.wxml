@@ -15,6 +15,20 @@
 
     <view class="describe">
       <view class="desc-title">
+        <text class="desc-v">v1.1.9 公测版</text>
+        <text class="desc-time">2019.03.03</text>
+      </view>
+      <text class="desc-content">优化升级</text>
+      <view class="desc-list">
+        <text>整体页面风格重新构造</text>
+        <text>移除协同管理，增加员工管理</text>
+        <text>一些已知bug的修复</text>
+        <text>更名为积木舟</text>
+      </view>
+    </view>
+
+    <view class="describe">
+      <view class="desc-title">
         <text class="desc-v">v1.1.8 公测版</text>
         <text class="desc-time">2019.03.03</text>
       </view>
