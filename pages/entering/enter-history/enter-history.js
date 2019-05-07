@@ -3,8 +3,8 @@ var Bmob = require('../../../utils/bmob.js');
 var Bmob_new = require('../../../utils/bmob_new.js');
 var that;
 
-const masterid = wx.getStorageSync("masterid");
-const userid = wx.getStorageSync("userid");
+let masterid = wx.getStorageSync("masterid");
+let userid = wx.getStorageSync("userid");
 Page({
 
   /*** 页面的初始数据*/
@@ -98,8 +98,11 @@ Page({
         objects.push(tempGoods)
         //单据
         var tempBills = new Bills();
-        var user = new Bmob.User();
+        
+        let User = Bmob.Object.extend("_User");
+        let user = new User();
         user.id = wx.getStorageSync('masterid');
+        
         tempBills.set('goodsName', that.data.goods[i].goodsName);
         tempBills.set('retailPrice', that.data.goods[i].modify_retailPrice);
         tempBills.set('num', that.data.goods[i].num);

@@ -62,7 +62,7 @@ Page({
   getdetail: function (e) {
     var id = e.currentTarget.dataset.id;
     wx.showActionSheet({
-      itemList: ['查看详情', '收款', "收款记录"],
+      itemList: ['查看详情'],
       success(res) {
         console.log(res.tapIndex)
         if (res.tapIndex == 0) {

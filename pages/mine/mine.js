@@ -1,6 +1,8 @@
 // pages/mine/mine.js
 const app = getApp()
 var config = require('../../utils/config.js')
+const Bmob_new = require('../../utils/bmob_new.js');
+const Bmob = require('../../utils/bmob.js');
 Page({
 
   /**
